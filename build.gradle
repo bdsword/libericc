@@ -24,7 +24,7 @@ jar {
 repositories {
     // Use 'jcenter' for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
-	maven { url "http://jcenter.bintray.com" }
+	maven { url "http://jcenter.bintray.com/" }
 }
 
 // In this section you declare the dependencies for your production and test code

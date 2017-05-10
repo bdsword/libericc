@@ -22,6 +22,7 @@ public class Handlers {
 	// methodSubSignature -> (superClass -> Handler)
 	static Map<String, Map<SootClass, CallHandler>> m = new HashMap<String, Map<SootClass, CallHandler>>();
 	static CallHandler ignoredCallHandler = new IgnoredCallHandler();
+	static GenericFunctionCallHandler genericFunctionCallHandler = new GenericFunctionCallHandler();
 	
 	// add handlers on creation
 	static {
@@ -76,7 +77,7 @@ public class Handlers {
 			catch (Exception e) {}
 		}
 		if (isIgnoredMethod(method)) return ignoredCallHandler;
-		return null;
+		return genericFunctionCallHandler;
 	}
 	
 	static public void insertHandler(CallHandler handler){
